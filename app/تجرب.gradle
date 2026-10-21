@@ -1,0 +1,21 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.myapp'   // 👈 هذا السطر هو سر حل مشكلة R.java
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.myapp"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    // 👇 هذه المكتبة هي التي كانت ناقصة وتسببت في الخطأ
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
